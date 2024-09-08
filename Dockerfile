@@ -31,7 +31,8 @@ RUN install-php-extensions \
     exif \
     bcmath \
     amqp \
-    zip;
+    zip \
+    mongodb;
 
 COPY --from=composer/composer:2-bin /composer /usr/local/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
