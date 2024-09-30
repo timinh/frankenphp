@@ -9,6 +9,7 @@ ENV TZ=${ARG_TIMEZONE}
 ENV SERVER_NAME=:80
 
 RUN apk add \
+    redis \
     git \
     nano \
     vim
