@@ -43,4 +43,5 @@ RUN install-php-extensions \
 
 COPY --from=composer/composer:2-bin /composer /usr/local/bin/composer
 COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./Caddyfile /etc/caddy/Caddyfile
 ENV COMPOSER_ALLOW_SUPERUSER=1
