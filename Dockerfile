@@ -41,7 +41,6 @@ RUN install-php-extensions \
     mongodb \
     zip;
 
-
 # Installation supercronic
 # Latest releases available at https://github.com/aptible/supercronic/releases
 ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.2.33/supercronic-linux-amd64 \
