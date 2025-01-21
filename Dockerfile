@@ -21,7 +21,6 @@ RUN apk add \
 
 RUN install-php-extensions \
     opcache \
-    pdo \
     intl \
     mysqli \
     gd \
@@ -53,10 +52,9 @@ RUN curl -fsSLO "$SUPERCRONIC_URL" \
  && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
  && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
 
-COPY ./supervisor/supercronic.conf /etc/supervisor/conf.d/supercronic.conf
+COPY ./supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./crontab /etc/crontabs/crontab
 
-COPY ./supervisor/supercronic.conf /etc/supervisor/conf.d/supercronic.conf
 COPY --from=composer/composer:2-bin /composer /usr/local/bin/composer
 COPY ./php.ini /usr/local/etc/php/php.ini
 COPY ./Caddyfile /etc/caddy/Caddyfile
