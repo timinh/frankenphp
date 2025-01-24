@@ -4,7 +4,7 @@
 printenv > /etc/environment
 
 # Start supercronic using supervisord
-supervisord -c /etc/supervisor/conf.d/supercronic.conf && supervisorctl start all
+supervisord -c /etc/supervisor/conf.d/supervisord.conf && supervisorctl start all
 
 if [ -f /tmp/entrypoint.sh ]; then
     . /tmp/entrypoint.sh
