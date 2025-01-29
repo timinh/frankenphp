@@ -23,6 +23,7 @@
 
         # Uncomment the following lines to enable Mercure and Vulcain modules
         mercure {
+              transport_url {$MERCURE_TRANSPORT_URL:bolt:///data/mercure.db}
               # Publisher JWT key
               publisher_jwt {env.MERCURE_PUBLISHER_JWT_KEY}
               # Subscriber JWT key
