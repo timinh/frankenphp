@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.4
+ARG PHP_VERSION=8.3
 FROM dunglas/frankenphp:php${PHP_VERSION}-alpine
 
 ARG ARG_TIMEZONE=Europe/Paris
@@ -38,6 +38,7 @@ RUN install-php-extensions \
     amqp \
     redis \
     mongodb \
+    soap \
     zip;
 
 # Installation supercronic
