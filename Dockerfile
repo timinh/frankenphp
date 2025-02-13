@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.4
+ARG PHP_VERSION=8.3
 FROM dunglas/frankenphp:php${PHP_VERSION}-alpine
 
 ARG ARG_TIMEZONE=Europe/Paris
@@ -53,7 +53,7 @@ RUN curl -fsSLO "$SUPERCRONIC_URL" \
  && mv "$SUPERCRONIC" "/usr/local/bin/${SUPERCRONIC}" \
  && ln -s "/usr/local/bin/${SUPERCRONIC}" /usr/local/bin/supercronic
 
-RUN touch /tmp/supervisord.sock && chmod 777 /tmp/supervisord.sock
+RUN touch /var/run/supervisord.sock && chmod 777 /var/run/supervisord.sock
 COPY ./supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./crontab /etc/crontabs/crontab
 
