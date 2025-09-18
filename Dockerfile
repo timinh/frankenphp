@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.3-alpine
+ARG PHP_VERSION=8.3
 FROM dunglas/frankenphp:php${PHP_VERSION}-alpine
 
 ARG ARG_TIMEZONE=Europe/Paris
